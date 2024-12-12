@@ -1,0 +1,17 @@
+# cpp prgram :- Given an integer x, return true if x is a palindrome, and false otherwise.
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        long long rev = 0;
+        long long temp = x;
+        if (x < 0) {
+            return false;
+        }
+        while (temp != 0) {
+            int remainder = temp % 10;
+            rev = rev * 10 + remainder;
+            temp = temp / 10;
+        }
+        return rev == x;
+    }
+};
